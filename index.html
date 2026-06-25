@@ -1,363 +1,916 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html class="no-js pixora-dark" lang="zxx">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jayphix.Consults | Elite Digital Agency</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet" />
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            serif: ['Playfair Display', 'serif'],
-          }
-        }
-      }
-    }
-  </script>
-  <link rel="stylesheet" href="style.css" />
+
+   <meta charset="utf-8">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <title>Pixora || Creative Portfolio HTML Template</title>
+   <meta name="description" content="">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   <!-- Place favicon.ico in the root directory -->
+   <link rel="shortcut icon" type="image/x-icon" href="assets/img/logo/favicon.png">
+
+   <!-- CSS here -->
+   <link rel="stylesheet" href="assets/css/bootstrap.css">
+   <link rel="stylesheet" href="assets/css/animate.css">
+   <link rel="stylesheet" href="assets/css/custom-animation.css">
+   <link rel="stylesheet" href="assets/css/swiper-bundle.css">
+   <link rel="stylesheet" href="assets/css/nice-select.css">
+   <link rel="stylesheet" href="assets/css/magnific-popup.css">
+   <link rel="stylesheet" href="assets/css/font-awesome-pro.css">
+   <link rel="stylesheet" href="assets/css/spacing.css">
+   <link rel="stylesheet" href="assets/css/main.css">
+   <link rel="stylesheet" href="assets/css/site-fixes.css">
+   
 </head>
-<body class="bg-[#050d1f] text-white overflow-x-hidden">
 
-  <!-- Custom Cursor -->
-  <div id="cursor-dot"></div>
-  <div id="cursor-outline"></div>
+<body>
 
-  <!-- Noise Texture Overlay -->
-  <div class="noise-overlay"></div>
-
-  <!-- Loader -->
-  <div id="loader" class="fixed inset-0 bg-[#050d1f] z-[999] flex flex-col items-center justify-center gap-4">
-    <div class="text-3xl font-serif font-bold tracking-widest text-amber-500 loader-logo">JAYPHIX</div>
-    <div class="flex gap-3 mt-4">
-      <div class="loader-dot"></div>
-      <div class="loader-dot"></div>
-      <div class="loader-dot"></div>
-    </div>
-  </div>
-
-  <!-- Main Site -->
-  <div id="mainSite">
-
-    <!-- Navbar -->
-    <nav class="fixed top-0 w-full z-50 px-6 md:px-12 py-6 flex items-center justify-between mix-blend-difference">
-      <a href="#" class="text-2xl font-serif font-bold tracking-tight text-white">Jayphix<span class="text-amber-500">.Consults</span></a>
-      <div class="hidden md:flex items-center gap-10">
-        <a href="#about" class="nav-link text-xs font-semibold uppercase tracking-widest text-white hover:text-amber-400 transition">About</a>
-        <a href="#services" class="nav-link text-xs font-semibold uppercase tracking-widest text-white hover:text-amber-400 transition">Services</a>
-        <a href="#work" class="nav-link text-xs font-semibold uppercase tracking-widest text-white hover:text-amber-400 transition">Work</a>
-        <a href="#contact" class="nav-link text-xs font-semibold uppercase tracking-widest text-white hover:text-amber-400 transition">Contact</a>
-        <button onclick="openAdmin()" class="text-xs font-semibold uppercase tracking-widest text-slate-400 hover:text-amber-400 transition flex items-center gap-2">
-          <i data-lucide="lock" class="w-3.5 h-3.5"></i> Admin
-        </button>
-      </div>
-      <button class="md:hidden text-white" onclick="toggleMobileMenu()"><i data-lucide="menu" class="w-6 h-6"></i></button>
-    </nav>
-
-    <!-- Mobile Menu -->
-    <div id="mobileMenu" class="fixed inset-0 bg-[#050d1f]/95 backdrop-blur-xl z-40 hidden flex-col items-center justify-center gap-8">
-      <button class="absolute top-6 right-6 text-white" onclick="toggleMobileMenu()"><i data-lucide="x" class="w-8 h-8"></i></button>
-      <a href="#about" onclick="toggleMobileMenu()" class="text-3xl font-serif text-white hover:text-amber-400 transition">About</a>
-      <a href="#services" onclick="toggleMobileMenu()" class="text-3xl font-serif text-white hover:text-amber-400 transition">Services</a>
-      <a href="#work" onclick="toggleMobileMenu()" class="text-3xl font-serif text-white hover:text-amber-400 transition">Work</a>
-      <a href="#contact" onclick="toggleMobileMenu()" class="text-3xl font-serif text-white hover:text-amber-400 transition">Contact</a>
-    </div>
-
-    <!-- Hero Section -->
-    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
-      <div class="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-blue-800/20 rounded-full filter blur-[120px] animate-pulse-slow"></div>
-      <div class="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-amber-500/10 rounded-full filter blur-[100px] animate-pulse-slow" style="animation-delay: 2s;"></div>
-      
-      <div class="relative z-10 text-center max-w-6xl mx-auto px-6">
-        <div class="reveal">
-          <p class="text-xs md:text-sm font-bold tracking-[0.3em] uppercase text-amber-500 mb-8 flex items-center justify-center gap-3">
-            <span class="w-8 h-px bg-amber-500"></span> Digital Creative <span class="w-8 h-px bg-amber-500"></span>
-          </p>
-        </div>
-        <h1 class="text-5xl md:text-8xl lg:text-9xl font-serif font-bold leading-[0.9] tracking-tighter mb-8 reveal" style="animation-delay: 0.2s">
-          <span id="typewriterText"></span><span class="typewriter-cursor">|</span>
-        </h1>
-        <div class="reveal" style="animation-delay: 0.4s">
-          <p class="text-slate-400 text-base md:text-xl max-w-2xl mx-auto mb-12 font-light leading-relaxed">
-            We partner with ambitious brands to create premium digital experiences that drive measurable impact.
-          </p>
-        </div>
-        <div class="flex flex-col sm:flex-row gap-5 justify-center reveal" style="animation-delay: 0.6s">
-          <a href="#work" class="group bg-amber-500 text-blue-950 font-bold px-8 py-4 rounded-full text-sm flex items-center justify-center gap-2 hover:bg-amber-400 transition duration-300">
-            View Our Work <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
-          </a>
-          <a href="#contact" class="border border-amber-500/30 text-amber-500 font-semibold px-8 py-4 rounded-full text-sm flex items-center justify-center gap-2 hover:bg-amber-500/10 transition duration-300">
-            Book a Call
-          </a>
-        </div>
-      </div>
-      
-      <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-500 animate-bounce">
-        <span class="text-[10px] uppercase tracking-widest">Scroll</span>
-        <i data-lucide="chevron-down" class="w-4 h-4"></i>
-      </div>
-    </section>
-
-    <!-- About Section (Bento Grid) -->
-    <section id="about" class="py-32 px-6 md:px-12 max-w-7xl mx-auto">
-      <div class="grid md:grid-cols-5 gap-6">
-        <div class="md:col-span-3 bg-gradient-to-br from-blue-950 to-blue-900 border border-white/5 rounded-3xl p-10 relative overflow-hidden group reveal">
-          <div class="absolute top-0 right-0 w-64 h-64 bg-amber-500/5 rounded-full filter blur-3xl group-hover:bg-amber-500/10 transition duration-700"></div>
-          <p class="text-xs font-bold tracking-[0.3em] uppercase text-amber-500 mb-6">About Us</p>
-          <h2 class="text-4xl md:text-5xl font-serif font-bold leading-tight mb-6">Building Digital <br/><em class="text-amber-400 font-light">Excellence</em></h2>
-          <p class="text-slate-400 text-sm leading-relaxed font-light max-w-lg">
-            Jayphix.Consults is a premium web development and digital consulting firm. We bring a meticulous approach to every project — combining cutting-edge technology with refined design sensibility.
-          </p>
-        </div>
-        <div class="md:col-span-2 grid grid-rows-3 gap-6">
-          <div class="glass-card rounded-3xl p-8 flex flex-col justify-center reveal" style="animation-delay:0.1s">
-            <div class="text-5xl font-serif font-bold text-white mb-1">50+</div>
-            <div class="text-xs text-slate-500 uppercase tracking-widest">Projects Delivered</div>
-          </div>
-          <div class="glass-card rounded-3xl p-8 flex flex-col justify-center reveal" style="animation-delay:0.2s">
-            <div class="text-5xl font-serif font-bold text-amber-500 mb-1">100%</div>
-            <div class="text-xs text-slate-500 uppercase tracking-widest">Client Satisfaction</div>
-          </div>
-          <div class="glass-card rounded-3xl p-8 flex flex-col justify-center reveal" style="animation-delay:0.3s">
-            <div class="text-5xl font-serif font-bold text-white mb-1">3+</div>
-            <div class="text-xs text-slate-500 uppercase tracking-widest">Years of Impact</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="py-32 px-6 md:px-12 max-w-7xl mx-auto">
-      <div class="text-center mb-20 reveal">
-        <p class="text-xs font-bold tracking-[0.3em] uppercase text-amber-500 mb-4 flex items-center justify-center gap-3">
-          <span class="w-8 h-px bg-amber-500"></span> Capabilities <span class="w-8 h-px bg-amber-500"></span>
-        </p>
-        <h2 class="text-4xl md:text-6xl font-serif font-bold">Our <em class="text-amber-400 font-light">Services</em></h2>
-      </div>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="service-card glass-card rounded-3xl p-8 group reveal">
-          <div class="w-14 h-14 rounded-2xl bg-amber-500/10 flex items-center justify-center mb-8 group-hover:bg-amber-500 transition duration-300">
-            <i data-lucide="globe" class="w-6 h-6 text-amber-500 group-hover:text-blue-950 transition"></i>
-          </div>
-          <h3 class="text-xl font-semibold mb-3">Web Development</h3>
-          <p class="text-slate-400 text-sm leading-relaxed font-light">Custom websites built with modern technologies. Responsive, fast, and optimized for conversion.</p>
-        </div>
-        <div class="service-card glass-card rounded-3xl p-8 group reveal" style="animation-delay:0.1s">
-          <div class="w-14 h-14 rounded-2xl bg-amber-500/10 flex items-center justify-center mb-8 group-hover:bg-amber-500 transition duration-300">
-            <i data-lucide="palette" class="w-6 h-6 text-amber-500 group-hover:text-blue-950 transition"></i>
-          </div>
-          <h3 class="text-xl font-semibold mb-3">UI/UX Design</h3>
-          <p class="text-slate-400 text-sm leading-relaxed font-light">Beautiful, intuitive interfaces designed with your users in mind. Every pixel has a purpose.</p>
-        </div>
-        <div class="service-card glass-card rounded-3xl p-8 group reveal" style="animation-delay:0.2s">
-          <div class="w-14 h-14 rounded-2xl bg-amber-500/10 flex items-center justify-center mb-8 group-hover:bg-amber-500 transition duration-300">
-            <i data-lucide="smartphone" class="w-6 h-6 text-amber-500 group-hover:text-blue-950 transition"></i>
-          </div>
-          <h3 class="text-xl font-semibold mb-3">Mobile Apps</h3>
-          <p class="text-slate-400 text-sm leading-relaxed font-light">Native and cross-platform mobile applications that deliver seamless experiences on any device.</p>
-        </div>
-        <div class="service-card glass-card rounded-3xl p-8 group reveal" style="animation-delay:0.3s">
-          <div class="w-14 h-14 rounded-2xl bg-amber-500/10 flex items-center justify-center mb-8 group-hover:bg-amber-500 transition duration-300">
-            <i data-lucide="search" class="w-6 h-6 text-amber-500 group-hover:text-blue-950 transition"></i>
-          </div>
-          <h3 class="text-xl font-semibold mb-3">SEO Optimization</h3>
-          <p class="text-slate-400 text-sm leading-relaxed font-light">Data-driven SEO strategies to boost your visibility and drive organic traffic to your site.</p>
-        </div>
-        <div class="service-card glass-card rounded-3xl p-8 group reveal" style="animation-delay:0.4s">
-          <div class="w-14 h-14 rounded-2xl bg-amber-500/10 flex items-center justify-center mb-8 group-hover:bg-amber-500 transition duration-300">
-            <i data-lucide="trending-up" class="w-6 h-6 text-amber-500 group-hover:text-blue-950 transition"></i>
-          </div>
-          <h3 class="text-xl font-semibold mb-3">Digital Strategy</h3>
-          <p class="text-slate-400 text-sm leading-relaxed font-light">Strategic consulting to align your digital presence with your business goals and growth targets.</p>
-        </div>
-        <div class="service-card glass-card rounded-3xl p-8 group reveal" style="animation-delay:0.5s">
-          <div class="w-14 h-14 rounded-2xl bg-amber-500/10 flex items-center justify-center mb-8 group-hover:bg-amber-500 transition duration-300">
-            <i data-lucide="server" class="w-6 h-6 text-amber-500 group-hover:text-blue-950 transition"></i>
-          </div>
-          <h3 class="text-xl font-semibold mb-3">Hosting & Maintenance</h3>
-          <p class="text-slate-400 text-sm leading-relaxed font-light">Reliable hosting and ongoing maintenance so your site stays secure, fast, and up-to-date.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Work/Projects Section -->
-    <section id="work" class="py-32 px-6 md:px-12 max-w-7xl mx-auto">
-      <div class="text-center mb-20 reveal">
-        <p class="text-xs font-bold tracking-[0.3em] uppercase text-amber-500 mb-4 flex items-center justify-center gap-3">
-          <span class="w-8 h-px bg-amber-500"></span> Portfolio <span class="w-8 h-px bg-amber-500"></span>
-        </p>
-        <h2 class="text-4xl md:text-6xl font-serif font-bold">Featured <em class="text-amber-400 font-light">Projects</em></h2>
-      </div>
-      <div id="publicProjects" class="grid md:grid-cols-2 gap-6"></div>
-      <div id="noProjectsMsg" class="text-center py-24 glass-card rounded-3xl reveal">
-        <i data-lucide="folder-open" class="w-12 h-12 text-blue-800 mx-auto mb-4"></i>
-        <p class="text-slate-500 text-sm">No projects published yet. Check back soon!</p>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-32 px-6 md:px-12 max-w-7xl mx-auto">
-      <div class="grid md:grid-cols-2 gap-16 items-center">
-        <div class="reveal">
-          <p class="text-xs font-bold tracking-[0.3em] uppercase text-amber-500 mb-4 flex items-center gap-3">
-            <span class="w-8 h-px bg-amber-500"></span> Get In Touch
-          </p>
-          <h2 class="text-4xl md:text-6xl font-serif font-bold mb-6">Let's <em class="text-amber-400 font-light">Talk</em></h2>
-          <p class="text-slate-400 text-base leading-relaxed font-light mb-10 max-w-md">Ready to start your project? Book a call with us and let's discuss how we can bring your vision to life.</p>
-          <div class="space-y-6">
-            <div class="flex items-center gap-4">
-              <div class="w-12 h-12 glass-card rounded-xl flex items-center justify-center">
-                <i data-lucide="mail" class="w-5 h-5 text-amber-500"></i>
-              </div>
-              <span class="text-sm text-slate-300 font-light">hello@jayphix.consults</span>
+   <!-- Loader Start -->
+   <div id="loader" class="loader">
+      <div class="loader__wrapper">
+         <div class="loader__content">
+            <div class="loader__count">
+               <span class="count__text">0</span>
+               <span class="count__percent">%</span>
             </div>
-            <div class="flex items-center gap-4">
-              <div class="w-12 h-12 glass-card rounded-xl flex items-center justify-center">
-                <i data-lucide="phone" class="w-5 h-5 text-amber-500"></i>
-              </div>
-              <span class="text-sm text-slate-300 font-light">+1 (555) 123-4567</span>
+         </div>
+         <span class="count__bdr"></span>
+      </div>
+   </div>
+   <!-- Loader End -->   
+
+<!-- back to top start -->
+   <div class="back-to-top-wrapper">
+      <button id="back_to_top" type="button" class="back-to-top-btn">
+         <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11 6L6 1L1 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+               stroke-linejoin="round" />
+         </svg>
+      </button>
+   </div>
+   <!-- back to top end -->
+
+
+   <div class="px-blur-bottom"></div>
+
+   <!-- tp-offcanvus-area-start -->
+   <div class="tp-offcanvas-area">
+      <div class="tp-offcanvas-wrapper offcanvas-black-bg">
+         <div class="tp-offcanvas-top d-flex align-items-center justify-content-between">
+            <div class="tp-offcanvas-logo">
+               <a href="#top">
+                  <img class="logo-1" data-width="120" src="assets/img/logo/logo-orange.png" alt="">
+                  <img class="logo-2" data-width="120" src="assets/img/logo/logo-orange.png" alt="">
+               </a>
             </div>
-          </div>
-        </div>
-        <form id="contactForm" onsubmit="handleContactSubmit(event)" class="space-y-4 reveal" style="animation-delay:0.2s">
-          <input type="text" placeholder="Your Name" required class="w-full bg-blue-950/50 border border-white/5 rounded-xl px-5 py-4 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-amber-500/50 transition" />
-          <input type="email" placeholder="Your Email" required class="w-full bg-blue-950/50 border border-white/5 rounded-xl px-5 py-4 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-amber-500/50 transition" />
-          <textarea placeholder="Tell us about your project..." rows="4" required class="w-full bg-blue-950/50 border border-white/5 rounded-xl px-5 py-4 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-amber-500/50 transition resize-none"></textarea>
-          <button type="submit" class="w-full bg-amber-500 hover:bg-amber-400 text-blue-950 font-bold py-4 rounded-xl transition text-sm flex items-center justify-center gap-2">
-            Send Message <i data-lucide="send" class="w-4 h-4"></i>
-          </button>
-        </form>
+            <div class="tp-offcanvas-close">
+               <button class="tp-offcanvas-close-btn">
+                  <svg width="37" height="38" viewBox="0 0 37 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M9.19141 9.80762L27.5762 28.1924" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                     <path d="M9.19141 28.1924L27.5762 9.80761" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+               </button>
+            </div>
+         </div>
+         <div class="tp-offcanvas-main">
+            <div class="tp-offcanvas-content d-none d-xl-block">
+               <h3 class="tp-offcanvas-title">Hello There!</h3>
+               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, </p>
+            </div>
+            <div class="tp-offcanvas-menu d-xl-none">
+               <nav></nav>
+            </div>
+            <div class="tp-offcanvas-gallery d-none d-xl-block">
+               <div class="row gx-2">
+                  <div class="col-md-3 col-3">
+                     <div class="tp-offcanvas-gallery-img fix">
+                        <a class="popup-image" href="assets/img/offcanvas/offcanvas-1.jpg"><img src="assets/img/offcanvas/offcanvas-1.jpg" alt=""></a>
+                     </div>
+                  </div>
+                  <div class="col-md-3 col-3">
+                     <div class="tp-offcanvas-gallery-img fix">
+                        <a class="popup-image" href="assets/img/offcanvas/offcanvas-2.jpg"><img src="assets/img/offcanvas/offcanvas-2.jpg" alt=""></a>
+                     </div>
+                  </div>
+                  <div class="col-md-3 col-3">
+                     <div class="tp-offcanvas-gallery-img fix">
+                        <a class="popup-image" href="assets/img/offcanvas/offcanvas-3.jpg"><img src="assets/img/offcanvas/offcanvas-3.jpg" alt=""></a>
+                     </div>
+                  </div>
+                  <div class="col-md-3 col-3">
+                     <div class="tp-offcanvas-gallery-img fix">
+                        <a class="popup-image" href="assets/img/offcanvas/offcanvas-4.jpg"><img src="assets/img/offcanvas/offcanvas-4.jpg" alt=""></a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="tp-offcanvas-contact">
+               <h3 class="tp-offcanvas-title sm">Information</h3>
+               <ul>
+                  <li><a href="tel:1245654">+ 4 20 7700 1007</a></li>
+                  <li><a href="mailto:hello@pixora.com">hello@pixora.com</a></li>
+                  <li><a href="#">Avenue de Roma 158b, Lisboa</a></li>
+               </ul>
+            </div>
+            <div class="tp-offcanvas-social">
+               <h3 class="tp-offcanvas-title sm">Follow Us</h3>
+               <ul>
+                  <li>
+                     <a href="#">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M11.25 1.5H4.75C2.95507 1.5 1.5 2.95507 1.5 4.75V11.25C1.5 13.0449 2.95507 14.5 4.75 14.5H11.25C13.0449 14.5 14.5 13.0449 14.5 11.25V4.75C14.5 2.95507 13.0449 1.5 11.25 1.5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                           <path d="M10.6016 7.5907C10.6818 8.13166 10.5894 8.68414 10.3375 9.16955C10.0856 9.65497 9.68711 10.0486 9.19862 10.2945C8.71014 10.5404 8.15656 10.6259 7.61663 10.5391C7.0767 10.4522 6.57791 10.1972 6.19121 9.81055C5.80451 9.42385 5.54959 8.92506 5.46271 8.38513C5.37583 7.8452 5.46141 7.29163 5.70728 6.80314C5.95315 6.31465 6.34679 5.91613 6.83221 5.66425C7.31763 5.41238 7.87011 5.31998 8.41107 5.4002C8.96287 5.48202 9.47372 5.73915 9.86817 6.1336C10.2626 6.52804 10.5197 7.0389 10.6016 7.5907Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                           <path d="M11.5742 4.42578H11.5842" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="#">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M2.50589 12.7494C4.57662 16.336 9.16278 17.5648 12.7494 15.4941C14.2113 14.65 15.2816 13.388 15.8962 11.9461C16.7895 9.85066 16.7208 7.37526 15.4941 5.25063C14.2674 3.12599 12.1581 1.82872 9.89669 1.55462C8.34063 1.366 6.71259 1.66183 5.25063 2.50589C1.66403 4.57662 0.435172 9.16278 2.50589 12.7494Z" stroke="currentColor" stroke-width="1.5" />
+                           <path d="M12.7127 15.4292C12.7127 15.4292 12.0086 10.4867 10.5011 7.87559C8.99362 5.26451 5.28935 2.57155 5.28935 2.57155M5.68449 15.6124C6.79553 12.2606 12.34 8.54524 16.3975 9.43537M12.311 2.4082C11.1953 5.72344 5.75732 9.38453 1.71875 8.58915" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                        </svg>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="#">
+                        <svg width="18" height="11" viewBox="0 0 18 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M1 5.5715H6.33342C7.62867 5.5715 8.61917 6.56199 8.61917 7.85725C8.61917 9.15251 7.62867 10.143 6.33342 10.143H1.76192C1.30477 10.143 1 9.83823 1 9.38108V1.76192C1 1.30477 1.30477 1 1.76192 1H5.5715C6.86676 1 7.85725 1.99049 7.85725 3.28575C7.85725 4.58101 6.86676 5.5715 5.5715 5.5715H1Z" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10"></path>
+                           <path d="M10.9062 7.09454H17.0016C17.0016 5.41832 15.6301 4.04688 13.9539 4.04688C12.2777 4.04688 10.9062 5.41832 10.9062 7.09454ZM10.9062 7.09454C10.9062 8.77076 12.2777 10.1422 13.9539 10.1422H15.2492" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                           <path d="M16.1125 1.44434H11.668" stroke="currentColor" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="#">
+                        <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M12.75 13H5.25C3 13 1.5 11.5 1.5 9.25V4.75C1.5 2.5 3 1 5.25 1H12.75C15 1 16.5 2.5 16.5 4.75V9.25C16.5 11.5 15 13 12.75 13Z" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                           <path d="M8.70676 5.14837L10.8006 6.40465C11.5543 6.90716 11.5543 7.66093 10.8006 8.16344L8.70676 9.41972C7.86923 9.92224 7.19922 9.50348 7.19922 8.5822V6.06964C7.19922 4.98086 7.86923 4.64585 8.70676 5.14837Z" fill="currentColor" />
+                        </svg>
+                     </a>
+                  </li>
+               </ul>
+            </div>
+         </div>
       </div>
-    </section>
+   </div>
+   <div class="body-overlay"></div>
+   <!-- tp-offcanvus-area-end -->
 
-    <!-- Footer -->
-    <footer class="border-t border-white/5 py-8 px-6 md:px-12">
-      <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-        <div class="text-xl font-serif font-bold text-white">Jayphix<span class="text-amber-500">.</span></div>
-        <p class="text-slate-600 text-xs">&copy; 2025 Jayphix.Consults. All rights reserved.</p>
+
+   <header>
+
+      <!-- header area start -->
+      <div class="px-header-6-ptb px-header-style-black header-transparent">
+         <div class="container container-1870">
+            <div class="row align-items-center">
+               <div class="col-5">
+                  <div class="px-header-6-menu tp-header-dropdown dropdown-black-bg d-none d-xl-block">
+                     <nav class="tp-mobile-menu-active">
+                        <ul>
+                           <li><a href="#top">Home</a></li>
+                           <li><a href="about-me-dark.html">About</a></li>
+                           <li><a href="#projects">Projects</a></li>
+                           <li><a href="#contact">Contact</a></li>
+                        </ul>
+                     </nav>
+                  </div>
+                  <div class="px-header-logo d-block d-xl-none">
+                     <a href="#top">
+                        <img data-width="95" src="assets/img/logo/logo-orange.png" alt="">
+                     </a>
+                  </div>
+               </div>
+               <div class="col-2">
+                  <div class="px-header-logo text-center d-none d-xl-block">
+                     <a href="#top">
+                        <img data-width="95" src="assets/img/logo/logo-orange.png" alt="">
+                     </a>
+                  </div>
+               </div>
+               <div class="col-5">
+                  <div class="px-header-6-action d-flex justify-content-end align-items-center">
+                     <div class="px-header-6-info d-none d-xl-block">
+                        <a class="px-line-lr" href="mailto:hello@pixora.com">Hello@Pixora.com</a>
+                     </div>
+                     <div class="px-header-6-btn ml-25 d-none d-xl-block">
+                        <a class="px-btn-grey" href="contact-me-dark.html">
+                           Contact me
+                        </a>
+                     </div>
+                     <div class="px-header-action d-xl-none">
+                        <button class="px-header-bar tp-offcanvas-open-btn">
+                           <span></span>
+                           <span></span>
+                        </button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
       </div>
-    </footer>
-  </div>
+      <!-- header area end -->
 
-  <!-- ============ ADMIN PANEL ============ -->
-  <div id="adminPanel" class="hidden">
-    <aside id="adminSidebar" class="admin-sidebar">
-      <div class="p-6 border-b border-white/5">
-        <div class="text-lg font-serif font-semibold text-amber-500">Jayphix<span class="text-white">.Admin</span></div>
+   </header>
+
+   <div id="smooth-wrapper">
+      <div id="smooth-content">
+      
+         <main>
+
+            <!-- hero area start -->
+            <div id="top" class="px-hero-6-area px-hero-6-bg pt-100" data-background="assets/img/hero/hero-6/hero-bg-shape.png">
+               <div class="container">
+                  <div class="row align-items-end">
+                     <div class="col-xl-4 col-lg-5 order-1 order-lg-0">
+                        <div class="px-hero-6-left">
+                           <div class="px-hero-6-info">
+                              <p>
+                                 Hello! I'm Luca <br>
+                                 Nardi. a digital designer <br>
+                                 & creative developer <br>
+                                 from Italy.
+                              </p>
+                              <div class="px-hero-6-signature">
+                                 <img src="assets/img/signature/signature.svg" alt="">
+                              </div>
+                           </div>
+                           <div class="px-hero-6-social z-index-1 mb-50">
+                              <a class="px-doubble-effect" href="#">
+                                linkedin
+                                 <i>
+                                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                       <path d="M1 9L9 1M9 1H1M9 1V9" stroke="currentcolor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                       <path d="M1 9L9 1M9 1H1M9 1V9" stroke="currentcolor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                 </i>
+                              </a>
+                              <a class="px-doubble-effect" href="#">
+                                Instagram
+                                 <i>
+                                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                       <path d="M1 9L9 1M9 1H1M9 1V9" stroke="currentcolor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                       <path d="M1 9L9 1M9 1H1M9 1V9" stroke="currentcolor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                 </i>
+                              </a>
+                              <a class="px-doubble-effect" href="#">
+                                 Twitter
+                                 <i>
+                                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                       <path d="M1 9L9 1M9 1H1M9 1V9" stroke="currentcolor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                       <path d="M1 9L9 1M9 1H1M9 1V9" stroke="currentcolor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                 </i>
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-xl-5 col-lg-7 order-0 order-lg-1">
+                        <div class="px-hero-6-thumb">
+                           <img src="assets/img/hero/hero-6/hero-1-dark.png" alt="">
+                        </div>
+                     </div>
+                     <div class="col-xl-3 order-lg-1">
+                        <div class="px-hero-6-category text-xl-end mb-50">
+                           <span>Web design</span><br>
+                           <span>Art Direction</span>
+                           <span>HTML</span><br>
+                           <span>Branding</span>
+                           <span>Motion Design</span>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="px-hero-6-slider p-relative">
+                  <div class="px-hero-6-btn-wrap">
+                     <a class="px-hero-6-btn px-btn-zikzak text-center p-relative" href="contact-me-dark.html">
+                        <span class="btn-text">
+                           <i class="btn-icon">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                 <path d="M1 13L13 1" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                 <path d="M1 1H13V13" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                              </svg>
+                           </i>
+                           Let’s Talk
+                        </span>
+                        <i class="zikzak-bg">
+                           <svg width="190" height="190" viewBox="0 0 190 190" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M95 0C79.7848 0 67.45 12.3348 67.45 27.55V28.4886L66.7869 27.8245C56.0272 17.0658 38.5842 17.0658 27.8245 27.8245C17.0658 38.5833 17.0658 56.0272 27.8245 66.7869L28.4886 67.45H27.55C12.3348 67.45 0 79.7848 0 95C0 110.215 12.3348 122.55 27.55 122.55H28.4886L27.8245 123.213C17.0658 133.973 17.0658 151.416 27.8245 162.175C38.5833 172.934 56.0272 172.934 66.7869 162.175L67.45 161.511V162.45C67.45 177.665 79.7848 190 95 190C110.215 190 122.55 177.665 122.55 162.45V161.511L123.214 162.175C133.973 172.934 151.416 172.934 162.175 162.175C172.934 151.416 172.934 133.973 162.175 123.214L161.511 122.55H162.45C177.665 122.55 190 110.215 190 95C190 79.7848 177.665 67.45 162.45 67.45H161.511L162.175 66.7869C172.934 56.0272 172.934 38.5833 162.175 27.8245C151.416 17.0658 133.973 17.0658 123.214 27.8245L122.55 28.4886V27.55C122.55 12.3348 110.215 0 95 0Z" fill="currentcolor" />
+                           </svg>
+                        </i>
+                     </a>
+                  </div>
+                  <div class="swiper-container px-text-6-active">
+                     <div class="swiper-wrapper slide-transtion">
+                        <div class="swiper-slide">
+                           <div class="px-hero-6-text">
+                              <span>Branding<i>_</i></span>
+                           </div>
+                        </div>
+                        <div class="swiper-slide">
+                           <div class="px-hero-6-text">
+                              <span>Development<i class="icon-left">_</i></span>
+                           </div>
+                        </div>
+                        <div class="swiper-slide">
+                           <div class="px-hero-6-text">
+                              <span>Design<i>_</i></span>
+                           </div>
+                        </div>
+                        <div class="swiper-slide">
+                           <div class="px-hero-6-text">
+                              <span>Branding<i>_</i></span>
+                           </div>
+                        </div>
+                        <div class="swiper-slide">
+                           <div class="px-hero-6-text">
+                              <span>Development<i class="icon-left">_</i></span>
+                           </div>
+                        </div>
+                        <div class="swiper-slide">
+                           <div class="px-hero-6-text">
+                              <span>Design<i>_</i></span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- hero area end -->
+
+            <!-- video area start -->
+            <div class="px-video-4-wrap fix px-bdr-style">
+               <video data-speed="0.1" loop="" muted="" autoplay="" playsinline="">
+                  <source src="assets/videos/banner-4-1.mp4" type="video/mp4">
+               </video>
+            </div>
+            <!-- video area end -->
+
+            <!-- about area start -->
+            <div id="about" class="px-about-6-area pt-110 pb-110" data-bg-color="#1C1D20">
+               <div class="container">
+                  <div class="px-about-6-top mb-100">
+                     <div class="row align-items-center">
+                        <div class="col-xl-5 col-lg-6">
+                           <div class="px-about-6-title-box">
+                              <span class="px-section-subtitle mb-35">About me</span>
+                              <h4 class="px-section-title ff-thunder fs-130">What i do</h4>
+                           </div>
+                        </div>
+                        <div class="offset-xl-1 col-xl-6 col-lg-6">
+                           <div class="px-service-6-wrap pt-15">
+                              <div class="px-service-6-slide-wrap fix">
+                                 <div class="swiper-container px-service-6-active">
+                                    <div class="swiper-wrapper">
+                                       <div class="swiper-slide">
+                                          <div class="px-service-6-text">
+                                             <span>Branding</span>
+                                          </div>
+                                       </div>
+                                       <div class="swiper-slide">
+                                          <div class="px-service-6-text">
+                                             <span>Development</span>
+                                          </div>
+                                       </div>
+                                       <div class="swiper-slide">
+                                          <div class="px-service-6-text">
+                                             <span>Design</span>
+                                          </div>
+                                       </div>
+                                       <div class="swiper-slide">
+                                          <div class="px-service-6-text">
+                                             <span>Branding</span>
+                                          </div>
+                                       </div>
+                                       <div class="swiper-slide">
+                                          <div class="px-service-6-text">
+                                             <span>Development</span>
+                                          </div>
+                                       </div>
+                                       <div class="swiper-slide">
+                                          <div class="px-service-6-text">
+                                             <span>Design</span>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="col-xl-5 col-lg-5">
+                        <div class="px-about-6-thumb pt-25">
+                           <img src="assets/img/about/about-6-1.jpg" alt="">
+                        </div>
+                     </div>
+                     <div class="offset-xl-1 col-xl-6 col-lg-7">
+                        <div class="px-about-6-content">
+                           <p>
+                              I'm a French digital designer and web
+                              developer with over 10 years of experience.
+                              At the crossroads of <span>design,</span> <span>motion</span> and <span>web
+                              development,</span> the diversity of my skills allows
+                              me to approach design
+                           </p>
+                           <a class="px-about-4-link text-white px-doubble-effect" href="about-me-dark.html">
+                              <span>More about me</span>
+                              <i>
+                                 <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 9L9 1M9 1H1M9 1V9" stroke="currentcolor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                 </svg>
+                                 <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 9L9 1M9 1H1M9 1V9" stroke="currentcolor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                 </svg>
+                              </i>
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- about area end -->
+
+            <!-- project area start -->
+            <div id="projects" class="px-project-6-area pt-120">
+               <div class="px-project-6-wrap projects p-relative">
+                  <div class="px-project-6-inner">
+                     <div class="px-project-6-item is-active" data-index-number="0">
+                        <a href="portfolio-details-2-dark.html">
+                           <div class="container-fluid">
+                              <div class="row justify-content-center">
+                                 <div class="col-xl-9">
+                                    <div class="row align-items-center">
+                                       <div class="col-lg-7">
+                                          <div class="px-project-6-content d-flex">
+                                             <span>(01)</span>
+                                             <h4 class="px-project-6-title">Netrix</h4>
+                                          </div>
+                                       </div>
+                                       <div class="col-lg-5">
+                                          <div class="px-project-6-content text-lg-end">
+                                             <p>Design Direction, UX/UI Design</p>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </a>
+                     </div>
+                     <div class="px-project-6-item is-active" data-index-number="1">
+                        <a href="portfolio-details-2-dark.html">
+                           <div class="container-fluid">
+                              <div class="row justify-content-center">
+                                 <div class="col-xl-9">
+                                    <div class="row align-items-center">
+                                       <div class="col-lg-7">
+                                          <div class="px-project-6-content d-flex">
+                                             <span>(02)</span>
+                                             <h4 class="px-project-6-title">Easy Culi</h4>
+                                          </div>
+                                       </div>
+                                       <div class="col-lg-5">
+                                          <div class="px-project-6-content text-lg-end">
+                                             <p>Design Direction, UX/UI Design</p>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </a>
+                     </div>
+                     <div class="px-project-6-item is-active" data-index-number="2">
+                        <a href="portfolio-details-2-dark.html">
+                           <div class="container-fluid">
+                              <div class="row justify-content-center">
+                                 <div class="col-xl-9">
+                                    <div class="row align-items-center">
+                                       <div class="col-lg-7">
+                                          <div class="px-project-6-content d-flex">
+                                             <span>(03)</span>
+                                             <h4 class="px-project-6-title">Space Needle</h4>
+                                          </div>
+                                       </div>
+                                       <div class="col-lg-5">
+                                          <div class="px-project-6-content text-lg-end">
+                                             <p>Design Direction, UX/UI Design</p>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </a>
+                     </div>
+                     <div class="px-project-6-item is-active" data-index-number="3">
+                        <a href="portfolio-details-2-dark.html">
+                           <div class="container-fluid">
+                              <div class="row justify-content-center">
+                                 <div class="col-xl-9">
+                                    <div class="row align-items-center">
+                                       <div class="col-lg-7">
+                                          <div class="px-project-6-content d-flex">
+                                             <span>(04)</span>
+                                             <h4 class="px-project-6-title">Fabric</h4>
+                                          </div>
+                                       </div>
+                                       <div class="col-lg-5">
+                                          <div class="px-project-6-content text-lg-end">
+                                             <p>Design Direction, UX/UI Design</p>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </a>
+                     </div>
+                  </div>
+                  <div class="px-project-6-img-wrap">
+                     <div class="px-project-6-img-slider">
+                        <img src="assets/img/project/project-6/project-1.jpg" alt="">
+                        <img src="assets/img/project/project-1.jpg" alt="">
+                        <img src="assets/img/project/project-2.jpg" alt="">
+                        <img src="assets/img/project/project-3.jpg" alt="">
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- project area end -->
+
+            <!-- gallery area start -->
+            <div class="px-gallery-area pt-140 pb-140">
+               <div class="px-gallery-slider-one mb-20">
+                  <div class="swiper-container px-gallery-active">
+                     <div class="swiper-wrapper slide-transtion">
+                        <div class="swiper-slide">
+                           <div class="px-gallery-item">
+                              <img src="assets/img/gallery/gallery-1.jpg" alt="">
+                           </div>
+                        </div>
+                        <div class="swiper-slide">
+                           <div class="px-gallery-item">
+                              <img src="assets/img/gallery/gallery-7.jpg" alt="">
+                           </div>
+                        </div>
+                        <div class="swiper-slide">
+                           <div class="px-gallery-item">
+                              <video loop="" muted="" autoplay="" playsinline="">
+                                 <source src="assets/videos/banner-4-1.mp4" type="video/mp4">
+                              </video>
+                           </div>
+                        </div>
+                        <div class="swiper-slide">
+                           <div class="px-gallery-item">
+                              <img src="assets/img/gallery/gallery-2.jpg" alt="">
+                           </div>
+                        </div>
+                        <div class="swiper-slide">
+                           <div class="px-gallery-item">
+                              <img src="assets/img/gallery/gallery-3.jpg" alt="">
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="px-gallery-slider-two">
+                  <div class="swiper-container px-gallery-active" dir="rtl">
+                     <div class="swiper-wrapper slide-transtion">
+                        <div class="swiper-slide">
+                           <div class="px-gallery-item">
+                              <img src="assets/img/gallery/gallery-4.jpg" alt="">
+                           </div>
+                        </div>
+                        <div class="swiper-slide">
+                           <div class="px-gallery-item">
+                              <video loop="" muted="" autoplay="" playsinline="">
+                                 <source src="assets/videos/banner-4-1.mp4" type="video/mp4">
+                              </video>
+                           </div>
+                        </div>
+                        <div class="swiper-slide">
+                           <div class="px-gallery-item">
+                              <img src="assets/img/gallery/gallery-5.jpg" alt="">
+                           </div>
+                        </div>
+                        <div class="swiper-slide">
+                           <div class="px-gallery-item">
+                              <img src="assets/img/gallery/gallery-6.jpg" alt="">
+                           </div>
+                        </div>
+                        <div class="swiper-slide">
+                           <div class="px-gallery-item">
+                              <img src="assets/img/gallery/gallery-7.jpg" alt="">
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- gallery area end -->
+
+            <!-- award area start -->
+            <div class="px-award-area pb-120">
+               <div class="container">
+                  <div class="px-award-title-wrap mb-45">
+                     <div class="row">
+                        <div class="col-xl-9">
+                           <div class="px-award-content">
+                              <h3 class="px-section-title ff-thunder fs-130 mb-25">Awards & <br> recognitions.</h3>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="px-award-wrapper">
+                     <div class="px-award-item px-fade-anim" data-delay=".3">
+                        <div class="row">
+                           <div class="col-xl-3 col-lg-2 col-md-1">
+                              <div class="px-award-num">
+                                 <span>(001)</span>
+                              </div>
+                           </div>
+                           <div class="col-xl-3 col-lg-4 col-md-5">
+                              <div class="px-award-category">
+                                 <img src="assets/img/award/award-1.png" alt="">
+                                 <span>Best web design agency</span>
+                              </div>
+                           </div>
+                           <div class="col-xl-3 col-lg-4 col-md-5">
+                              <div class="px-award-nomination">
+                                 <span>Web Excellence Awards</span>
+                              </div>
+                           </div>
+                           <div class="col-xl-3 col-lg-2 col-md-1">
+                              <div class="px-award-year text-md-end">
+                                 <span>2023</span>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="px-award-item px-fade-anim" data-delay=".5">
+                        <div class="row">
+                           <div class="col-xl-3 col-lg-2 col-md-1">
+                              <div class="px-award-num">
+                                 <span>(002)</span>
+                              </div>
+                           </div>
+                           <div class="col-xl-3 col-lg-4 col-md-5">
+                              <div class="px-award-category">
+                                 <img src="assets/img/award/award-2.png" alt="">
+                                 <span>Top digital marketing firm</span>
+                              </div>
+                           </div>
+                           <div class="col-xl-3 col-lg-4 col-md-5">
+                              <div class="px-award-nomination">
+                                 <span>Clutch Top Agencies</span>
+                              </div>
+                           </div>
+                           <div class="col-xl-3 col-lg-2 col-md-1">
+                              <div class="px-award-year text-md-end">
+                                 <span>2022</span>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="px-award-item px-fade-anim" data-delay=".7">
+                        <div class="row">
+                           <div class="col-xl-3 col-lg-2 col-md-1">
+                              <div class="px-award-num">
+                                 <span>(003)</span>
+                              </div>
+                           </div>
+                           <div class="col-xl-3 col-lg-4 col-md-5">
+                              <div class="px-award-category">
+                                 <img src="assets/img/award/award-3.png" alt="">
+                                 <span>Best web design agency</span>
+                              </div>
+                           </div>
+                           <div class="col-xl-3 col-lg-4 col-md-5">
+                              <div class="px-award-nomination">
+                                 <span>Awwwards Honorable Mention</span>
+                              </div>
+                           </div>
+                           <div class="col-xl-3 col-lg-2 col-md-1">
+                              <div class="px-award-year text-md-end">
+                                 <span>2024</span>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="px-award-item px-fade-anim" data-delay=".9">
+                        <div class="row">
+                           <div class="col-xl-3 col-lg-2 col-md-1">
+                              <div class="px-award-num">
+                                 <span>(004)</span>
+                              </div>
+                           </div>
+                           <div class="col-xl-3 col-lg-4 col-md-5">
+                              <div class="px-award-category">
+                                 <img src="assets/img/award/award-1.png" alt="">
+                                 <span>Best web design agency</span>
+                              </div>
+                           </div>
+                           <div class="col-xl-3 col-lg-4 col-md-5">
+                              <div class="px-award-nomination">
+                                 <span>CSS Design Awards</span>
+                              </div>
+                           </div>
+                           <div class="col-xl-3 col-lg-2 col-md-1">
+                              <div class="px-award-year text-md-end">
+                                 <span>2026</span>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- award area end -->
+
+         </main>
+
+    
+        <footer data-bg-color="#1C1D20">
+
+            <!-- footer area start -->
+            <div id="contact" class="px-footer-3-area pt-90 pb-120">
+               <div class="px-hero-6-slider px-footer-3-slider-style mb-100">
+                  <div class="swiper-container px-footer-3-active">
+                     <div class="swiper-wrapper slide-transtion">
+                        <div class="swiper-slide">
+                           <div class="px-hero-6-text">
+                              <span>get in touch <i>_</i></span>
+                           </div>
+                        </div>
+                        <div class="swiper-slide">
+                           <div class="px-hero-6-text">
+                              <span>get in touch <i>_</i></span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="container">
+                  <div class="row">
+                     <div class="offset-xl-4 col-xl-8">
+                        <div class="px-footer-3-box">
+                           <div class="px-footer-3-info">
+                              <div class="px-footer-3-tel">
+                                 <a href="tel:(510)8956500">(510) 895-6500</a>
+                              </div>
+                              <div class="px-footer-3-mail">
+                                 <a href="mailto:Hello@Pixora.com">Hello@Pixora.com</a>
+                              </div>
+                           </div>
+                           <form action="POST">
+                              <div class="px-footer-3-input-box">
+                                 <div class="row">
+                                    <div class="col-xl-4">
+                                       <div class="px-footer-3-select mb-10">
+                                          <select class="px-select">
+                                             <option value="1">Personal portfolio</option>
+                                             <option value="2">Digital Agency</option>
+                                             <option value="3">Creative Agency</option>
+                                             <option value="4">It Solution</option>
+                                          </select>
+                                       </div>
+                                    </div>
+                                    <div class="col-xl-4">
+                                       <div class="px-footer-3-input mb-15">
+                                          <input type="text" placeholder="Your name">
+                                       </div>
+                                    </div>
+                                    <div class="col-xl-4">
+                                       <div class="px-footer-3-input mb-15">
+                                          <input type="text" placeholder="Your email">
+                                       </div>
+                                    </div>
+                                    <div class="col-xl-12">
+                                       <div class="px-footer-3-input mb-15">
+                                          <input type="text" placeholder="How may i help you?">
+                                          <button class="px-footer-3-btn" type="submit">
+                                             <span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                                   <path d="M1 11L11 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                   <path d="M1 1H11V11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                             </span>
+                                          </button>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </form>
+                           <div class="px-footer-3-social">
+                              <a href="#">
+                                 Linkedin
+                                 <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                       <path d="M1 11L11 1" stroke="white" stroke-opacity="0.7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                       <path d="M1 1H11V11" stroke="white" stroke-opacity="0.7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                 </span>
+                              </a>
+                              <a href="#">
+                                 Twitter
+                                 <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                       <path d="M1 11L11 1" stroke="white" stroke-opacity="0.7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                       <path d="M1 1H11V11" stroke="white" stroke-opacity="0.7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                 </span>
+                              </a>
+                              <a href="#">
+                                 Facebook
+                                 <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                       <path d="M1 11L11 1" stroke="white" stroke-opacity="0.7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                       <path d="M1 1H11V11" stroke="white" stroke-opacity="0.7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                 </span>
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- footer area end -->
+
+            <!-- copyright area start -->
+            <div class="px-copyright-3-wrap">
+               <div class="container">
+                  <div class="row align-items-center">
+                     <div class="col-xl-4">
+                        <div class="px-copyright-3-text text-center text-lg-start">
+                           <p>© 2026 <a href="#">Themepure.</a> All Right Reserved</p>
+                        </div>
+                     </div>
+                     <div class="col-xl-5 col-lg-8">
+                        <div class="px-copyright-3-menu text-center text-lg-start">
+                           <ul>
+                              <li><a href="#top">Home</a></li>
+                              <li><a href="about-me-dark.html">About</a></li>
+                              <li><a href="#projects">Projects</a></li>
+                              <li><a href="#contact">Contact</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-xl-3 col-lg-4">
+                        <div class="px-copyright-3-backtop smooth text-center text-lg-end">
+                           <a href="#top">
+                              back to top
+                              <span>
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                    <path d="M7 13V1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M1 7L7 1L13 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                 </svg>
+                              </span>
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- copyright area end -->
+
+         </footer>
+
       </div>
-      <nav class="py-4">
-        <div class="sidebar-link active" onclick="switchAdminTab('dashboard', this)"><i data-lucide="layout-dashboard" class="w-5 h-5"></i> Dashboard</div>
-        <div class="sidebar-link" onclick="switchAdminTab('projects', this)"><i data-lucide="folder-kanban" class="w-5 h-5"></i> Projects</div>
-        <div class="sidebar-link" onclick="switchAdminTab('gallery', this)"><i data-lucide="image" class="w-5 h-5"></i> Gallery</div>
-        <div class="sidebar-link" onclick="switchAdminTab('messages', this)"><i data-lucide="message-square" class="w-5 h-5"></i> Messages</div>
-        <div class="mt-8 border-t border-white/5 pt-4">
-          <div class="sidebar-link" onclick="closeAdmin()"><i data-lucide="arrow-left" class="w-5 h-5"></i> Back to Site</div>
-        </div>
-      </nav>
-    </aside>
+   </div>
 
-    <main id="adminMain" class="admin-main bg-[#050d1f] min-h-screen">
-      <div class="sticky top-0 z-40 bg-[#050d1f]/80 backdrop-blur-md border-b border-white/5 px-8 py-4 flex items-center justify-between">
-        <button onclick="toggleSidebar()" class="text-slate-400 hover:text-white transition"><i data-lucide="menu" class="w-6 h-6"></i></button>
-        <div class="w-8 h-8 bg-amber-500 rounded-full flex items-center justify-center text-xs font-bold text-blue-950">JP</div>
-      </div>
 
-      <div id="tab-dashboard" class="admin-tab p-8">
-        <h2 class="text-2xl font-serif mb-8">Dashboard</h2>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div class="glass-card rounded-2xl p-6"><div class="text-xs text-slate-500 uppercase tracking-wider mb-2">Projects</div><div id="statProjects" class="text-3xl font-serif text-white">0</div></div>
-          <div class="glass-card rounded-2xl p-6"><div class="text-xs text-slate-500 uppercase tracking-wider mb-2">Gallery</div><div id="statGallery" class="text-3xl font-serif text-white">0</div></div>
-          <div class="glass-card rounded-2xl p-6"><div class="text-xs text-slate-500 uppercase tracking-wider mb-2">Messages</div><div id="statMessages" class="text-3xl font-serif text-white">0</div></div>
-          <div class="glass-card rounded-2xl p-6"><div class="text-xs text-slate-500 uppercase tracking-wider mb-2">Published</div><div id="statPublished" class="text-3xl font-serif text-amber-500">0</div></div>
-        </div>
-      </div>
+   <!-- JS here -->
+   <script src="assets/js/vendor/jquery.js"></script>
+   <script src="assets/js/bootstrap-bundle.js"></script>
+   <script src="assets/js/swiper-bundle.js"></script>
+   <script src="assets/js/magnific-popup.js"></script>
+   <script src="assets/js/nice-select.js"></script>
+   <script src="assets/js/purecounter.js"></script>
+   <script src="assets/js/isotope-pkgd.js"></script>
+   <script src="assets/js/plugin.js"></script>
+   <script src="assets/js/ripple-2.js"></script>
+   <script src="assets/js/slider-active.js"></script>
+   <script src="assets/js/imagesloaded-pkgd.js"></script>
+   <script src="assets/js/ajax-form.js"></script>
+   <script src="assets/js/matter.js"></script>
+   <script src="assets/js/throwable.js"></script>
+   <script src="assets/js/main.js"></script>
+   <script src="assets/js/site.js"></script>
 
-      <div id="tab-projects" class="admin-tab p-8 hidden">
-        <div class="flex items-center justify-between mb-8">
-          <h2 class="text-2xl font-serif">Projects</h2>
-          <button onclick="openProjectModal()" class="bg-amber-500 hover:bg-amber-400 text-blue-950 text-sm font-bold px-5 py-2.5 rounded-lg transition flex items-center gap-2">
-            <i data-lucide="plus" class="w-4 h-4"></i> New Project
-          </button>
-        </div>
-        <div id="adminProjectList" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
-        <div id="noAdminProjects" class="text-center py-20 glass-card rounded-2xl">
-          <p class="text-slate-500 text-sm mb-4">No projects yet.</p>
-          <button onclick="openProjectModal()" class="text-amber-500 text-sm font-semibold">Create First Project</button>
-        </div>
-      </div>
-
-      <div id="tab-gallery" class="admin-tab p-8 hidden">
-        <div class="flex items-center justify-between mb-8">
-          <h2 class="text-2xl font-serif">Gallery</h2>
-          <button onclick="openGalleryModal()" class="bg-amber-500 hover:bg-amber-400 text-blue-950 text-sm font-bold px-5 py-2.5 rounded-lg transition flex items-center gap-2">
-            <i data-lucide="upload" class="w-4 h-4"></i> Upload
-          </button>
-        </div>
-        <div id="adminGalleryGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"></div>
-        <div id="noAdminGallery" class="text-center py-20 glass-card rounded-2xl">
-          <p class="text-slate-500 text-sm mb-4">No images yet.</p>
-          <button onclick="openGalleryModal()" class="text-amber-500 text-sm font-semibold">Upload Image</button>
-        </div>
-      </div>
-
-      <div id="tab-messages" class="admin-tab p-8 hidden">
-        <h2 class="text-2xl font-serif mb-8">Messages</h2>
-        <div id="adminMessagesList" class="space-y-4"></div>
-        <div id="noAdminMessages" class="text-center py-20 glass-card rounded-2xl">
-          <p class="text-slate-500 text-sm">No messages yet.</p>
-        </div>
-      </div>
-    </main>
-  </div>
-
-  <!-- ============ MODALS ============ -->
-  <div id="projectModal" class="modal-overlay" onclick="if(event.target===this)closeProjectModal()">
-    <div class="modal-box">
-      <div class="flex items-center justify-between mb-6">
-        <h3 class="text-xl font-serif" id="projectModalTitle">New Project</h3>
-        <button onclick="closeProjectModal()" class="text-slate-400 hover:text-white transition"><i data-lucide="x" class="w-5 h-5"></i></button>
-      </div>
-      <form id="projectForm" onsubmit="handleProjectSubmit(event)" class="space-y-4">
-        <input type="hidden" id="projectEditId" value="" />
-        <input type="text" id="projectTitle" required placeholder="Project Title" class="w-full bg-blue-950/50 border border-white/5 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-amber-500/50 transition" />
-        <select id="projectCategory" class="w-full bg-blue-950/50 border border-white/5 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500/50 transition">
-          <option value="Web Development">Web Development</option>
-          <option value="UI/UX Design">UI/UX Design</option>
-          <option value="Mobile App">Mobile App</option>
-        </select>
-        <textarea id="projectDesc" rows="3" placeholder="Description" class="w-full bg-blue-950/50 border border-white/5 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-amber-500/50 transition resize-none"></textarea>
-        <input type="url" id="projectImage" placeholder="Image URL" class="w-full bg-blue-950/50 border border-white/5 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-amber-500/50 transition" />
-        <input type="url" id="projectUrl" placeholder="Project URL (optional)" class="w-full bg-blue-950/50 border border-white/5 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-amber-500/50 transition" />
-        <div class="flex items-center gap-3">
-          <input type="checkbox" id="projectPublished" class="rounded bg-blue-950 border-white/5 text-amber-500 focus:ring-amber-500" />
-          <label for="projectPublished" class="text-sm text-slate-300">Publish immediately</label>
-        </div>
-        <button type="submit" class="w-full bg-amber-500 hover:bg-amber-400 text-blue-950 font-bold py-3 rounded-lg transition text-sm">Save Project</button>
-      </form>
-    </div>
-  </div>
-
-  <div id="galleryModal" class="modal-overlay" onclick="if(event.target===this)closeGalleryModal()">
-    <div class="modal-box">
-      <div class="flex items-center justify-between mb-6">
-        <h3 class="text-xl font-serif">Upload Image</h3>
-        <button onclick="closeGalleryModal()" class="text-slate-400 hover:text-white transition"><i data-lucide="x" class="w-5 h-5"></i></button>
-      </div>
-      <form onsubmit="handleGallerySubmit(event)" class="space-y-4">
-        <input type="url" id="galleryImageUrl" required placeholder="Image URL" class="w-full bg-blue-950/50 border border-white/5 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-amber-500/50 transition" />
-        <input type="text" id="galleryTitle" required placeholder="Image Title" class="w-full bg-blue-950/50 border border-white/5 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-amber-500/50 transition" />
-        <button type="submit" class="w-full bg-amber-500 hover:bg-amber-400 text-blue-950 font-bold py-3 rounded-lg transition text-sm">Upload</button>
-      </form>
-    </div>
-  </div>
-
-  <!-- Toast -->
-  <div id="toast" class="toast"></div>
-
-  <script src="script.js"></script>
 </body>
+
 </html>
